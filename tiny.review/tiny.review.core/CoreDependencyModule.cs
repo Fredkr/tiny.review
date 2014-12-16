@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using tiny.review.core.RavenDb;
+using tiny.review.core.Users;
 
 namespace tiny.review.core
 {
@@ -7,6 +9,12 @@ namespace tiny.review.core
         protected override void Load(ContainerBuilder builder)
         {
             base.Load(builder);
+            builder.RegisterType<UserService>()
+            .As<IUserService>()
+            .InstancePerLifetimeScope();
+
+            builder.RegisterType<DbManager>()
+                .InstancePerLifetimeScope();
         }
     }
 }
