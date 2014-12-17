@@ -1,13 +1,4 @@
 'use strict';
-
-/**
- * @ngdoc overview
- * @name tinyreviewclientApp
- * @description
- * # tinyreviewclientApp
- *
- * Main module of the application.
- */
 angular
   .module('tinyreviewclientApp', [
     'ngAnimate',
@@ -21,6 +12,10 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+      })
+      .when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'RegisterCtrl'
       })
       .otherwise({
         redirectTo: '/'
