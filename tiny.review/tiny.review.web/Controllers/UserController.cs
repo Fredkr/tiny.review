@@ -14,7 +14,7 @@ namespace tiny.review.web.Controllers
 
         public JsonResult GetUser(string userId)
         {
-            return Json(userService.GetUser(userId), JsonRequestBehavior.AllowGet);
+            return Json(userService.GetUserByUserName(userId), JsonRequestBehavior.AllowGet);
         }
 
         public void AddUser(string userName, string emailAdress, string password)

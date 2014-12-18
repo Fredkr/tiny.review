@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using tiny.review.web.Manager;
 
 namespace tiny.review.web.App_Start
 {
@@ -8,6 +9,10 @@ namespace tiny.review.web.App_Start
         protected override void Load(ContainerBuilder builder)
         {
             base.Load(builder);
+
+            builder.RegisterType<AuthenticationManager>()
+             .As<IAuthenticationManager>()
+             .InstancePerLifetimeScope();
         }
     }
 }

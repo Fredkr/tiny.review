@@ -14,9 +14,14 @@ namespace tiny.review.core.Users
             this.db = db;
         }
 
-        public User GetUser(string userId)
+        public User GetUserByUserName(string userName)
         {
-            Expression<Func<User, bool>> query = u => u.UserId.Equals(userId);
+            Expression<Func<User, bool>> query = u => u.UserName.Equals(userName);
+            return db.GetDocument(query);
+        }
+        public User GetUserByEmail(string email)
+        {
+            Expression<Func<User, bool>> query = u => u.UserName.Equals(email);
             return db.GetDocument(query);
         }
 
