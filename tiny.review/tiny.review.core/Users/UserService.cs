@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using tiny.review.core.DataModels;
 using tiny.review.core.RavenDb;
 
@@ -23,14 +20,15 @@ namespace tiny.review.core.Users
             return db.GetDocument(query);
         }
 
-        public void AddUser(string userName, string emailAdress)
+        public void AddUser(string userName, string emailAdress, string password)
         {
+
             db.AddDocument(new User
             {
                 UserId = Convert.ToString(db.Count<User>() + 1),
                 UserName = userName,
                 EmailAdress = emailAdress,
-            });
+            }.SetPassword(password));
         }
     }
 }
