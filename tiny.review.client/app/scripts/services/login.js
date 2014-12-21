@@ -11,7 +11,7 @@ angular.module('tinyreviewclientApp')
       getLoginState: function () {
         return loginState;
       },
-      login: function(userName, password){
+      login: function(userName, password) {
         return $http({
             url: 'http://tiny.review:80/Login/login?userName='+userName+'&email=test@example.com&password='+ password,
             method: 'POST',
@@ -25,6 +25,10 @@ angular.module('tinyreviewclientApp')
           loginState.isLoggedIn = false;
           return data;
         });      
+      },
+      logout: function() {
+        loginState.isLoggedIn = false;
+        loginState.user = null;
       }
     };
   });

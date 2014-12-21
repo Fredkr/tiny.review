@@ -13,6 +13,9 @@ angular.module('tinyreviewclientApp')
   	        $scope.isLoggedIn = newVal;
   	});
 
+    $scope.logout = function() {
+      LoginService.logout();
+    };
   	$scope.isActive = function (viewLocation) { 
   		return viewLocation === $location.path();
   	};
