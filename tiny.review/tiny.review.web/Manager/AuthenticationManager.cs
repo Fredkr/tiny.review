@@ -16,7 +16,7 @@ namespace tiny.review.web.Manager
         {
             var user = !string.IsNullOrEmpty(userName) ? userService.GetUserByUserName(userName) : userService.GetUserByEmail(email);
 
-            if (user.ValidatePassword(password))
+            if (user != null && user.ValidatePassword(password))
             {
                 return new Login
                 {

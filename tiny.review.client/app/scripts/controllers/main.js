@@ -1,5 +1,4 @@
 'use strict';
 angular.module('tinyreviewclientApp')
-  .controller('MainCtrl', function ($scope) {
-  
+  .controller('MainCtrl', function () {
   });

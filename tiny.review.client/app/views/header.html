@@ -1,0 +1,9 @@
+<div ng-controller="HeaderCtrl">
+	<div class="header" ng-show="isLoggedIn">
+		<ul class="nav nav-pills pull-right">
+			<li ng-class="{ active: isActive('')}"><a href="#">Home</a></li>
+			<li ng-class="{ active: isActive('/login')}"><a href="#/login">Logout</a></li>
+		</ul>
+		<h3 class="text-muted">tinyreviewclient</h3>
+	</div>
+</div>

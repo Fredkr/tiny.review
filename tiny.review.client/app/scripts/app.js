@@ -9,7 +9,7 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/main', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
@@ -17,7 +17,18 @@ angular
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
       })
+       .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/login'
       });
+  })
+  .run( function($rootScope, $location, LoginService) {
+    $rootScope.$on( '$routeChangeStart', function(event, next) {
+      if (!LoginService.getLoginState().isLoggedIn && !next.templateUrl && next.templateUrl !== 'views/register.html') {
+        $location.path('/login');
+      }
+    });
   });
