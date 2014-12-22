@@ -27,7 +27,7 @@ angular
   })
   .run( function($rootScope, $location, LoginService) {
     $rootScope.$on( '$routeChangeStart', function(event, next) {
-      if (!LoginService.getLoginState().isLoggedIn && !next.templateUrl && next.templateUrl !== 'views/register.html') {
+      if (!LoginService.getLoginState().isLoggedIn || (!next.templateUrl && next.templateUrl !== 'views/register.html')) {
         $location.path('/login');
       }
     });

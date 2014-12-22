@@ -42,13 +42,14 @@ namespace tiny.review.core.RavenDb
             }
         }
 
-        public void AddDocument<T>(T document)
+        public bool AddDocument<T>(T document)
         {
 
             using (var session = docStore.OpenSession())
             {
                 session.Store(document);
                 session.SaveChanges();
+                return true;
             }
         }
 

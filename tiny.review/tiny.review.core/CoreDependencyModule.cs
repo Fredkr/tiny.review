@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using tiny.review.core.RavenDb;
+using tiny.review.core.Reviews;
 using tiny.review.core.Users;
 
 namespace tiny.review.core
@@ -11,6 +12,10 @@ namespace tiny.review.core
             base.Load(builder);
             builder.RegisterType<UserService>()
             .As<IUserService>()
+            .InstancePerLifetimeScope();
+
+            builder.RegisterType<ReviewService>()
+            .As<IReviewService>()
             .InstancePerLifetimeScope();
 
             builder.RegisterType<DbManager>()

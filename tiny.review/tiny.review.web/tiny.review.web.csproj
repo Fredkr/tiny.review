@@ -148,6 +148,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Login\" />
+    <Folder Include="Views\Review\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>

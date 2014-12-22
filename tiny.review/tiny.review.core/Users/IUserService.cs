@@ -6,6 +6,6 @@ namespace tiny.review.core.Users
     {
         User GetUserByUserName(string userName);
         User GetUserByEmail(string email);
-        void AddUser(string userName, string emailAdress, string password);
+        bool AddUser(string userName, string emailAdress, string password);
     }
 }

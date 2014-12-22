@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -10,6 +11,7 @@ namespace tiny.review.core.DataModels
         public string UserId { get; set; }
         public string UserName { get; set; }
         public string EmailAdress { get; set; }
+        public ICollection<Review> Reviews { get; set; }
 
         const string ConstantSalt = "xi07cevs01q4#";
         protected string HashedPassword { get; private set; }
@@ -50,6 +52,7 @@ namespace tiny.review.core.DataModels
             UserId = ((User)entity).UserId;
             UserName = ((User)entity).UserName;
             EmailAdress = ((User)entity).EmailAdress;
+            Reviews = ((User) entity).Reviews;
         }
     }
 }
