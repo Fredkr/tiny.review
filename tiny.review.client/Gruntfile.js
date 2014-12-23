@@ -62,7 +62,18 @@ module.exports = function (grunt) {
         ]
       }
     },
-
+    ngconstant: {
+      options: {
+        name: 'config',
+        dest: 'app/scripts/config.js',
+        constants: {
+          config: grunt.file.readJSON('app/config.json')
+        },
+        values: {
+          debug: true
+        }
+      }
+    },
     // The actual grunt server settings
     connect: {
       options: {
@@ -387,7 +398,6 @@ module.exports = function (grunt) {
     }
   });
 
-
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
@@ -395,6 +405,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'ngconstant', 
       'wiredep',
       'concurrent:server',
       'autoprefixer',
@@ -410,6 +421,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
+    'ngconstant', 
     'concurrent:test',
     'autoprefixer',
     'connect:test',
@@ -418,6 +430,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'ngconstant',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',

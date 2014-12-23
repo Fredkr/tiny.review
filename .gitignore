@@ -205,3 +205,5 @@ libpeerconnection.log
 npm-debug.log
 /tmp/
 /scripts/bower/bower-*
+
+/tiny.review.client/app/scripts/config.js

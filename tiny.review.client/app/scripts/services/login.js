@@ -1,6 +1,6 @@
 'use strict';
 angular.module('tinyreviewclientApp')
-  .factory('LoginService', function ($http) {
+  .factory('LoginService', function ($http, config) {
     var loginState =
       {
         isLoggedIn: false,
@@ -13,7 +13,7 @@ angular.module('tinyreviewclientApp')
       },
       login: function(userName, password) {
         return $http({
-            url: 'http://tiny.review:80/Login/login?userName='+userName+'&email=test@example.com&password='+ password,
+            url: config.apiBaseUrl + '/Login/login?userName='+userName+'&email=test@example.com&password=' + password,
             method: 'POST',
             data: '',
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
