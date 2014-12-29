@@ -14,7 +14,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 html{
   height: 100%;
 }
-body, .container {
+body {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #eeeeee;
@@ -71,10 +71,10 @@ footer {
   }
 }
 
-.panel{
-  background-color: #9ECF62;
+.content{
   display: table-row;   
   height: 100%; 
+  margin-bottom: 50px;
 }
 
 /* Responsive: Portrait tablets and up */
