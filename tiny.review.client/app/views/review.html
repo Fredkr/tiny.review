@@ -1,12 +1,18 @@
 <div class="panel panel-default">
-  <!-- Default panel contents -->
   <div class="panel-heading">Panel heading</div>
-  <div class="panel-body">
-    <p>Panel body</p>
-  </div>
 
-  <!-- Table -->
   <table class="table">
-    ...
+    <div class="list-group">
+    <div ng-repeat="review in reviews">
+	  <a href="#" class="list-group-item">
+	  	<span class="list-group-item-heading">
+	  	<h4>{{review.Title}}</h4>
+	    <span class="pull-right" ng-repeat="i in getRating(review.Rating) track by $index"><span class="glyphicon glyphicon-star"></span></span>
+	  	</span>
+	    <p class="list-group-item-text">{{review.Decscription}}</p>
+	  </a>    	
+    </div>
+
+	</div>
   </table>
 </div>
