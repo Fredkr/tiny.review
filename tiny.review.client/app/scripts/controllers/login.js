@@ -13,7 +13,7 @@ angular.module('tinyreviewclientApp')
           $scope.notification.type = 'success';
           $scope.notification.message = 'Succesfully logged in!';
           $scope.notification.show = true;
-          $location.path('/main');
+          $location.path('/review');
         }
       	});      
     };
