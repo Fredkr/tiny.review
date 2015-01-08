@@ -1,18 +1,17 @@
 <div class="panel panel-default">
   <div class="panel-heading">Panel heading</div>
-
   <table class="table">
     <div class="list-group">
-    <div ng-repeat="review in reviews">
-	  <a href="#" class="list-group-item">
-	  	<span class="list-group-item-heading">
-	  	<h4>{{review.Title}}</h4>
-	    <span class="pull-right" ng-repeat="i in getRating(review.Rating) track by $index"><span class="glyphicon glyphicon-star"></span></span>
-	  	</span>
-	    <p class="list-group-item-text">{{review.Decscription}}</p>
-	  </a>    	
-    </div>
-
-	</div>
+	    <div ng-repeat="review in filteredReviews">
+			  <a href="#" class="list-group-item">
+			  	<span class="list-group-item-heading">
+			  		<h4>{{review.Title}}</h4>
+			    	<span class="pull-right" ng-repeat="i in getRating(review.Rating) track by $index"><span class="glyphicon glyphicon-star"></span></span>
+			  	</span>
+			    <p class="list-group-item-text">{{review.Decscription}}</p>
+			  </a>    	
+	    </div>
+		</div>
   </table>
+  <pagination total-items="totalReviews" items-per-page="numPerPage" ng-model="currentPage" ng-change="pageChanged()" boundary-links="true"></pagination>
 </div>
