@@ -27,6 +27,10 @@ namespace tiny.review.web.Controllers
             return Json(reviewService.GetUserReviews(userName));
         }
 
+        public ActionResult GetReview(string userName, string reviewId)
+        {
+            return Json(reviewService.GetUserReview(userName, reviewId));
+        }
         public ActionResult AddReview(string userName, string title, string description, int rating)
         {
             var result = reviewService.AddReview(userName, title, description, rating);
