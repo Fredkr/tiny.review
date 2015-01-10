@@ -3,7 +3,7 @@
   <table class="table">
     <div class="list-group">
 	    <div ng-repeat="review in filteredReviews">
-			  <a href="#" class="list-group-item">
+			  <a href="#/review-detail/{{review.Id}}" class="list-group-item">
 			  	<span class="list-group-item-heading">
 			  		<h4>{{review.Title}}</h4>
 			    	<span class="pull-right" ng-repeat="i in getRating(review.Rating) track by $index"><span class="glyphicon glyphicon-star"></span></span>

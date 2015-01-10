@@ -15,6 +15,10 @@ angular
         templateUrl: 'views/review.html',
         controller: 'ReviewCtrl'
       })
+      .when('/review-detail/:reviewId', {
+        templateUrl: 'views/review-detail.html',
+        controller: 'ReviewDetailCtrl'
+      })
       .when('/register', {
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
